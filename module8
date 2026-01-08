@@ -1,0 +1,144 @@
+
+# MODULE 8: PRACTICAL EXERCISES
+
+# EXERCISE 1: BASIC GIT WORKFLOW
+#############################################
+
+# Create directory and initialize git
+mkdir exercise1-basic-git
+cd exercise1-basic-git
+git init
+
+# Create README file
+touch README.md
+echo "My first Git repository" > README.md
+
+# Add and commit file
+git add README.md
+git commit -m "Add README file"
+
+# Make changes and commit again
+echo "Learning Git workflow" >> README.md
+git add README.md
+git commit -m "Update README"
+
+# View commit history
+git log --oneline
+
+
+#############################################
+# EXERCISE 2: BRANCHING AND MERGING
+#############################################
+
+# Create feature branch
+git branch feature
+git switch feature
+
+# Add new file in feature branch
+touch feature.txt
+echo "This is a feature file" > feature.txt
+git add feature.txt
+git commit -m "Add feature file"
+
+# Switch back to main branch
+git switch main
+
+# Merge feature branch
+git merge feature
+
+# Delete feature branch
+git branch -d feature
+
+
+#############################################
+# EXERCISE 3: CONFLICT RESOLUTION
+#############################################
+
+# Create file and commit
+touch conflict.txt
+echo "Hello World" > conflict.txt
+git add conflict.txt
+git commit -m "Add conflict file"
+
+# Create two branches
+git branch branch1
+git branch branch2
+
+# Modify same line in branch1
+git switch branch1
+echo "Hello from branch1" > conflict.txt
+git commit -am "Update from branch1"
+
+# Modify same line in branch2
+git switch branch2
+echo "Hello from branch2" > conflict.txt
+git commit -am "Update from branch2"
+
+# Merge branch1 into main
+git switch main
+git merge branch1
+
+# Try merging branch2 (conflict will occur)
+git merge branch2
+
+# Manually resolve conflict in conflict.txt
+# Then stage and commit
+git add conflict.txt
+git commit -m "Resolve merge conflict"
+
+
+#############################################
+# EXERCISE 4: GITHUB COLLABORATION
+#############################################
+
+# Fork repository on GitHub (UI)
+
+# Clone forked repository
+git clone https://github.com/your-username/repo.git
+cd repo
+
+# Create new branch
+git checkout -b improvement
+
+# Make changes
+git add .
+git commit -m "Improve project"
+
+# Push branch to GitHub
+git push origin improvement
+
+# Create Pull Request on GitHub (UI)
+
+
+#############################################
+# EXERCISE 5: ADVANCED WORKFLOW
+#############################################
+
+# Initialize repository with multiple files
+mkdir exercise5-advanced
+cd exercise5-advanced
+git init
+
+touch file1.txt file2.txt
+git add .
+git commit -m "Add multiple files"
+
+# Create .gitignore
+touch .gitignore
+echo "node_modules/" >> .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+
+# Stash work in progress
+echo "Temporary work" >> file1.txt
+git stash
+
+# Create and tag a release
+git tag -a v1.0.0 -m "First release"
+
+# Push code and tags to GitHub
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+git push origin --tags
+
+
