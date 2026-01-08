@@ -1,0 +1,73 @@
+#############################################
+# MODULE 5: WORKING WITH REMOTE REPOSITORIES
+#############################################
+
+# Remote repository kya hota hai:
+# Remote repo server pe hota hai (GitHub/GitLab)
+# Team collaboration ke liye use hota hai
+
+#############################################
+# 1. VIEW REMOTE REPOSITORIES
+#############################################
+
+# Show remote names and URLs
+git remote -v
+
+#############################################
+# 2. ADD / MODIFY / REMOVE REMOTE
+#############################################
+
+# Add a remote repository
+git remote add origin https://github.com/username/repo.git
+
+# Change remote URL
+git remote set-url origin https://github.com/username/new-repo.git
+
+# Remove remote
+git remote remove origin
+
+#############################################
+# 3. PUSH CHANGES TO REMOTE
+#############################################
+
+# Push main branch to remote
+git push origin main
+
+# Push feature branch
+git push origin feature
+
+# Push and set upstream
+git push -u origin main
+
+# Force push (DANGEROUS – avoid in team)
+git push --force origin main
+
+#############################################
+# 4. PULL & FETCH
+#############################################
+
+# Pull changes (fetch + merge)
+git pull origin main
+
+# Pull with rebase (recommended)
+git pull --rebase origin main
+
+# Fetch only (no merge)
+git fetch origin
+
+#############################################
+# 5. REMOTE BRANCHES
+#############################################
+
+# List remote branches
+git branch -r
+
+# Create local branch from remote branch
+git checkout -b local-branch origin/remote-branch
+git checkout --track origin/remote-branch
+
+#############################################
+# 6. DELETE REMOTE BRANCH
+#############################################
+
+git push origin --delete branch-name
