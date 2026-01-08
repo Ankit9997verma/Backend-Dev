@@ -1,0 +1,100 @@
+
+# MODULE 4: BRANCHING AND MERGING
+
+
+# Branch kya hota hai:
+# Branch ek separate line of development hoti hai
+# Main branch stable hota hai, features alag branch me
+
+# 1. VIEW BRANCHES
+
+
+# Show local branches
+git branch
+
+# Show all branches (local + remote)
+git branch -a
+
+
+# 2. CREATE BRANCH
+
+
+# Create a new branch
+git branch feature
+
+
+# 3. SWITCH BRANCH
+
+
+# Switch to branch (old way)
+git checkout feature
+
+# Switch to branch (new way)
+git switch feature
+
+
+# 4. CREATE & SWITCH TO BRANCH
+
+
+git checkout -b new-feature
+git switch -c new-feature
+
+
+# 5. MERGE BRANCH
+
+
+# Switch to main branch
+git switch main
+
+# Merge feature branch into main
+git merge feature
+
+# Abort merge if conflict happens
+git merge --abort
+
+
+# 6. TYPES OF MERGES
+
+
+# Fast-forward merge:
+# When main branch has no new commits
+
+# Three-way merge:
+# When both branches have new commits
+# Creates a merge commit
+
+# 7. DELETE BRANCH
+
+
+# Safe delete (merged branch only)
+git branch -d feature
+
+# Force delete
+git branch -D feature
+
+
+# 8. RENAME BRANCH
+
+
+git branch -m old-name new-name
+
+
+# 9. MERGE CONFLICTS
+
+
+# Conflict tab hota hai jab same file ki same line
+# different branches me modify hoti hai
+
+# Check conflict files
+git status
+
+# Open conflicted file and manually resolve:
+# <<<<<<< HEAD
+# Current branch content
+# =======
+# Incoming branch content
+# >>>>>>> feature
+
+# After resolving:
+git add conflict-file.txt
+git commit -m "Resolve merge conflict"
