@@ -1,0 +1,66 @@
+#############################################
+# MODULE 6: GITHUB
+
+# Initialize local repo
+git init
+git add .
+git commit -m "Initial commit"
+
+# Add GitHub remote
+git remote add origin https://github.com/username/repo.git
+
+# Push code to GitHub
+git push -u origin main
+
+#############################################
+# 4. GITHUB WORKFLOW
+#############################################
+
+# Typical workflow:
+# Fork → Clone → Branch → Commit → Push → Pull Request
+
+#############################################
+# 5. FORK & CLONE
+#############################################
+
+# Fork repository (GitHub UI)
+
+# Clone forked repo
+git clone https://github.com/your-username/repo.git
+cd repo
+
+#############################################
+# 6. PULL REQUEST WORKFLOW
+#############################################
+
+# Create feature branch
+git checkout -b new-feature
+
+# Make changes
+git add .
+git commit -m "Add new feature"
+
+# Push branch to GitHub
+git push origin new-feature
+
+# GitHub UI:
+# New Pull Request
+# Compare branches
+# Add title & description
+# Submit PR
+
+#############################################
+# 7. ISSUES & PROJECTS
+#############################################
+
+# Issues:
+# Bug reports
+# Feature requests
+# Task tracking
+
+# Reference issue in commit
+git commit -m "Fix login bug #12"
+
+#############################################
+# END OF MODULE 6
+#############################################
