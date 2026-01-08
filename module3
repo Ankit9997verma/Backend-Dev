@@ -1,0 +1,129 @@
+
+# MODULE 3:
+
+
+
+3.1 GIT BASICS
+
+
+
+# Linux (Debian/Ubuntu)
+sudo apt-get install git
+
+# macOS (Homebrew)
+brew install git
+
+# Check Git version
+git --version
+
+-----------------
+GIT CONFIGURATION
+-----------------
+
+# Set user identity (VERY IMPORTANT)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Set default editor
+git config --global core.editor "vim"
+
+# View all configurations
+git config --list
+
+================================
+3.2 GIT REPOSITORY CONCEPTS
+================================
+
+# Repository (Repo)
+- Project folder jisme Git tracking hoti hai
+
+# Working Directory
+- Jahan tum files edit karte ho
+
+# Staging Area (Index)
+- Commit se pehle ka waiting area
+
+# Local Repository
+- .git folder (tumhare system pe)
+
+# Remote Repository
+- GitHub / GitLab pe hosted repo
+
+================================
+3.3 CREATE / INITIALIZE REPOSITORY
+================================
+
+# Initialize new Git repository
+git init
+
+# Check repository status
+git status
+
+-----------------
+CLONE EXISTING REPOSITORY
+-----------------
+
+git clone https://github.com/username/repository.git
+git clone https://github.com/username/repository.git new-folder-name
+
+================================
+3.4 BASIC GIT WORKFLOW
+================================
+
+# Step 1: Check status
+git status
+
+# Step 2: Add files to staging area
+git add filename
+git add .
+git add *.js
+git add folder/
+
+# Step 3: Commit changes
+git commit -m "Descriptive commit message"
+
+# Add + commit modified files together
+git commit -am "Quick commit message"
+
+# Step 4: View commit history
+git log
+git log --oneline
+git log --graph --oneline
+git log -n 5
+
+================================
+3.5 VIEWING CHANGES
+================================
+
+# Show unstaged changes
+git diff
+
+# Show staged changes
+git diff --staged
+
+# Show changes of specific file
+git diff filename
+
+# Compare two commits
+git diff commit1 commit2
+
+================================
+3.6 UNDOING CHANGES
+================================
+
+# Unstage file
+git reset filename
+git reset HEAD filename
+
+# Discard changes in working directory
+git checkout -- filename
+git restore filename
+
+# Amend last commit
+git commit --amend -m "New commit message"
+
+# Revert commit (safe – creates new commit)
+git revert commit-hash
+
+
+
