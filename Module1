@@ -1,0 +1,128 @@
+
+# MODULE 1: UNIX ENVIRONMENT & BASIC COMMANDS
+
+
+
+# Open terminal and check current directory
+pwd
+
+# List files and folders
+ls
+ls -l
+ls -a
+ls -lh
+
+# Change directories
+cd foldername
+cd ..
+cd ~
+cd -
+
+# 2. FILE SYSTEM OPERATIONS
+
+
+# Create directories
+mkdir test
+mkdir -p dir1/dir2/dir3
+
+# Remove directories
+rmdir emptydir
+rm -r folder
+rm -rf folder  
+
+# Create files
+touch file1.txt
+touch file2.txt
+
+# Copy files and directories
+cp file1.txt copy.txt
+cp -r dir1 dir1_backup
+
+# Move / Rename files
+mv file1.txt renamed.txt
+mv renamed.txt dir1/
+
+# Delete files
+rm file2.txt
+
+
+# 3. FILE CONTENT COMMANDS
+
+
+# View file contents
+cat renamed.txt
+less renamed.txt
+
+# View first and last lines
+head renamed.txt
+head -n 20 renamed.txt
+tail renamed.txt
+tail -f logfile.log
+
+# Count lines, words, characters
+wc renamed.txt
+wc -l renamed.txt
+
+
+# 4. FILE PERMISSIONS
+
+
+# View permissions
+ls -l
+
+# Change permissions
+chmod 755 script.sh
+chmod +x script.sh
+chmod -w renamed.txt
+
+# Change ownership (admin)
+chown user:group renamed.txt
+
+
+# 5. TEXT PROCESSING
+
+
+# Search text
+grep "error" renamed.txt
+grep -i "error" renamed.txt
+grep -r "error" .
+
+# Find files
+find . -name "*.txt"
+
+# Text manipulation
+sed 's/old/new/g' renamed.txt
+awk '{print $1}' renamed.txt
+sort renamed.txt
+uniq renamed.txt
+
+
+# 6. SYSTEM INFORMATION
+
+
+whoami
+hostname
+uname -a
+df -h
+du -sh .
+ps aux
+top
+kill PID
+
+
+# 7. REDIRECTION & PIPES
+
+
+# Output redirection
+ls > output.txt
+ls >> output.txt
+
+# Input redirection
+wc -l < output.txt
+
+# Error redirection
+command 2> error.log
+
+# Pipes
+cat output.txt | grep "txt" | sort | uniq > result.txt
+
