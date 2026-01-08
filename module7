@@ -1,0 +1,102 @@
+#############################################
+# MODULE 7: ADVANCED GIT CONCEPTS
+
+# 1. GIT TAGS (RELEASE MANAGEMENT)
+#############################################
+
+# Tags ka use releases mark karne ke liye hota hai
+
+# Create lightweight tag
+git tag v1.0.0
+
+# Create annotated tag (recommended)
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# List all tags
+git tag
+
+# Push single tag to remote
+git push origin v1.0.0
+
+# Push all tags
+git push origin --tags
+
+# Delete local tag
+git tag -d v1.0.0
+
+# Delete remote tag
+git push origin --delete v1.0.0
+
+#############################################
+# 2. GIT STASH (TEMPORARY SAVE)
+#############################################
+
+# Stash ka use tab hota hai jab kaam adhura ho
+# aur branch switch karni ho
+
+# Save current changes
+git stash
+
+# Save with message
+git stash save "Work in progress"
+
+# List all stashes
+git stash list
+
+# Apply stash (stash rahega)
+git stash apply
+
+# Apply specific stash
+git stash apply stash@{0}
+
+# Apply and remove stash
+git stash pop
+
+# Delete specific stash
+git stash drop stash@{0}
+
+# Clear all stashes
+git stash clear
+
+#############################################
+# 3. CHERRY-PICK (SPECIFIC COMMIT PICK KARNA)
+#############################################
+
+# Ek specific commit dusri branch me apply karna
+
+git cherry-pick commit-hash
+
+# Multiple commits cherry-pick
+git cherry-pick commit1 commit2
+
+#############################################
+# 4. GIT SUBMODULES
+#############################################
+
+# Submodule ka use tab hota hai jab
+# ek repo ke andar dusra repo include karna ho
+
+# Add submodule
+git submodule add https://github.com/user/repo.git path/to/submodule
+
+# Clone repo with submodules
+git clone --recursive https://github.com/user/main-repo.git
+
+# Initialize and update submodules
+git submodule update --init --recursive
+
+#############################################
+# 5. REBASE (ADVANCED & DANGEROUS)
+#############################################
+
+# Rebase commit history rewrite karta hai
+
+# Rebase current branch onto main
+git checkout feature
+git rebase main
+
+# Interactive rebase (edit/squash commits)
+git rebase -i HEAD~3
+
+
+#############################################
