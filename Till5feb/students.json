@@ -1,0 +1,13 @@
+ [
+    { "id": 1, "name": "Shivansh",
+     "branch": "cse", 
+     "state": "up" },
+
+    { "id": 2, 
+    "name": "Aman",
+     "branch": "ese" },
+
+    { "id": 3, 
+    "name": "ravi",
+     "branch": "ml" }
+]
